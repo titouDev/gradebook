@@ -9,7 +9,10 @@ namespace GradeBook
         {
             var book = new Book();
             book.AddGrade(89.1);
+            book.AddGrade(15.2);
+            book.AddGrade(8.31);
 
+            book.PrintGrades();
 
             double[] numbers = new double[3] {12.5, 10.48, 20};
             // same as                     
