@@ -1,3 +1,4 @@
 src/bin
 src/obj
 test/GradeBook.Tests/obj
+test/GradeBook.Tests/bin
