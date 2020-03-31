@@ -5,15 +5,17 @@ namespace GradeBook
     class Book
     {
         //Constructor
-        public Book()
+        public Book(string name)
         {
             grades = new List<double>();
+            // using this to avoid conflict with the name variable
+            this.name = name;
         }
 
         public void AddGrade(double grade)
         {
             grades.Add(grade);
-        }
+        }        
 
         public void PrintGrades()
         {
@@ -24,6 +26,7 @@ namespace GradeBook
         }
 
         List<double> grades;
+        string name;
     }
     
 }
