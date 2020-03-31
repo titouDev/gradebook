@@ -19,6 +19,24 @@ namespace GradeBook
             grades.Add(grade);
         }        
 
+        public Statistics GetStatistics()
+        {
+            var result = new Statistics();
+            result.Average = 0.0;
+            result.High = double.MinValue;
+            result.Low = double.MaxValue;
+
+            foreach(double grade in grades)
+            {
+                result.Low = Math.Min(result.Low, grade);
+                result.High = Math.Max(result.High, grade);
+                result.Average+=grade;
+            }
+            result.Average /= grades.Count;
+
+            return result;
+
+        }
         public void PrintGrades()
         {
             foreach(double grade in grades)
@@ -29,21 +47,11 @@ namespace GradeBook
 
         public void ShowStatistics()
         {
-            double lowestGrade = double.MaxValue;
-            double highestGrade = double.MinValue;
-            double avgGrade = 0;
+            var stats = GetStatistics();
 
-            foreach(double grade in grades)
-            {
-                lowestGrade = Math.Min(lowestGrade, grade);
-                highestGrade = Math.Max(highestGrade, grade);
-                avgGrade+=grade;
-            }
-            avgGrade /= grades.Count;
-
-            System.Console.WriteLine($"Lowest grade: {lowestGrade}");
-            System.Console.WriteLine($"Highest grade: {highestGrade}");
-            System.Console.WriteLine($"Average grade: {avgGrade}");
+            System.Console.WriteLine($"Lowest grade: {stats.Low}");
+            System.Console.WriteLine($"Highest grade: {stats.High}");
+            System.Console.WriteLine($"Average grade: {stats.Average}");
 
         }
 
