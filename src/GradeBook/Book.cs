@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -24,6 +25,26 @@ namespace GradeBook
             {
                 System.Console.WriteLine($"Bravo {grade}");
             }
+        }
+
+        public void ShowStatistics()
+        {
+            double lowestGrade = double.MaxValue;
+            double highestGrade = double.MinValue;
+            double avgGrade = 0;
+
+            foreach(double grade in grades)
+            {
+                lowestGrade = Math.Min(lowestGrade, grade);
+                highestGrade = Math.Max(highestGrade, grade);
+                avgGrade+=grade;
+            }
+            avgGrade /= grades.Count;
+
+            System.Console.WriteLine($"Lowest grade: {lowestGrade}");
+            System.Console.WriteLine($"Highest grade: {highestGrade}");
+            System.Console.WriteLine($"Average grade: {avgGrade}");
+
         }
 
         static public void PrintNumberOfBooks()
