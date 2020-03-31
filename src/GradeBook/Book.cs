@@ -9,8 +9,7 @@ namespace GradeBook
         public Book(string name)
         {
             grades = new List<double>();
-            // using this to avoid conflict with the name variable
-            this.name = name;
+            Name = name;
             numberOfBooks++;
         }
 
@@ -61,7 +60,7 @@ namespace GradeBook
         }
 
         List<double> grades;
-        string name;
+        public string Name;
 
         static int numberOfBooks = 0;
     }
