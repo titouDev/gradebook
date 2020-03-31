@@ -12,7 +12,14 @@ namespace GradeBook
             book.AddGrade(15.2);
             book.AddGrade(8.31);
 
-            book.PrintGrades();
+            var book2 = new Book("My Newer Book");
+            book2.AddGrade(89.1);
+            book2.AddGrade(15.2);
+            book2.AddGrade(8.31);
+
+            book2.PrintGrades();
+
+            Book.PrintNumberOfBooks();
 
             double[] numbers = new double[3] {12.5, 10.48, 20};
             // same as                     

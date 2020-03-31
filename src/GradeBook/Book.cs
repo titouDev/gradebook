@@ -10,6 +10,7 @@ namespace GradeBook
             grades = new List<double>();
             // using this to avoid conflict with the name variable
             this.name = name;
+            numberOfBooks++;
         }
 
         public void AddGrade(double grade)
@@ -25,8 +26,15 @@ namespace GradeBook
             }
         }
 
+        static public void PrintNumberOfBooks()
+        {
+            System.Console.WriteLine($"You have instanciated {numberOfBooks} books !");
+        }
+
         List<double> grades;
         string name;
+
+        static int numberOfBooks = 0;
     }
     
 }
