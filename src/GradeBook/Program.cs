@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GradeBook
 {
@@ -17,6 +18,19 @@ namespace GradeBook
             }
             System.Console.WriteLine(result);
 
+            List<double> grades = new List<double>();
+            grades.Add(15);
+            grades.Add(12);
+            grades.Add(11.5);
+            result = 0;
+            
+            foreach(double n in grades)
+            {
+                result += n;
+            }
+            result /= grades.Count;
+            // using N1 for formatting
+            System.Console.WriteLine($"Your grade is {result:N1}");
 
             if(args.Length > 0)
             {
