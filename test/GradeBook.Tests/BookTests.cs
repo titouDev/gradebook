@@ -6,21 +6,22 @@ namespace GradeBook.Tests
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void BookGetStatisticsMethod()
         {
             // arrange
             var book = new Book("");
-            book.AddGrade(15.21);
-            book.AddGrade(1.21);
-            book.AddGrade(16.5);
+            book.AddGrade(85);
+            book.AddGrade(95);
+            book.AddGrade(91);
             
             // act
             var result = book.GetStatistics();
 
             // assert
-            Assert.Equal(11, result.Average, 1);
-            Assert.Equal(1.21, result.Low, 1);
-            Assert.Equal(16.5, result.High, 1);
+            Assert.Equal(90.3, result.Average, 1);
+            Assert.Equal(85, result.Low, 1);
+            Assert.Equal(95, result.High, 1);
+            Assert.Equal('A', result.Letter);
 
         }
     }
